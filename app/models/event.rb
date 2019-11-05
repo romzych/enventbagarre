@@ -6,7 +6,6 @@ class Event < ApplicationRecord
     end
   end
   validate :duration_must_be_multiple_of_5
-  private
   def duration_must_be_multiple_of_5
     return if duration.blank? #On sort de la fonction si duration est vide
     if duration % 5 != 0
