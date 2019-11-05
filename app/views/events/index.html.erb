@@ -1,13 +1,15 @@
 <%= image_tag "logo.png", class: "" %>
 
 <div class="row">
-  <div class="col-md-4">
-    <h2>title</h2>
-    <p>description</p>
-    <p>start date</p>
-    <p>duration</p>
-    <p>price</p>
-    <p>location</p>
-    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-  </div>
+  <% @all_events.each do |event| %>
+    <div class="col-md-4">
+      <h2><%= event.title %></h2>
+      <p><%= event.description %></p>
+      <p>Date de debut : <%= event.start_date %></p>
+      <p>Durée : <%= event.duration %></p>
+      <p>Prix : <%= event.price %></p>
+      <p>Endroit : <%= event.location %></p>
+      <p><a class="btn btn-secondary" href="<%= event_path(event.id) %>" role="button">View details »</a></p>
+    </div>
+  <% end %>  
 </div>
