@@ -1,1 +1,16 @@
-<h1><%= current_user.email %></h1>
+<p>Prénom : <%= current_user.first_name %></p>
+<p>Nom : <%= current_user.last_name %></p>
+<p>Email : <%= current_user.email %></p>
+<p>Déscription : <%= current_user.description %></p> <br>
+
+<h2>Event organisé</h2>
+
+<ul>
+  <% @event_id_array.each do |i| %>
+  <li>Titre : <%= Event.find(i).title %></li>
+  <li><a href="<%= event_path(i)%>">En savoir plus</a></li> <br>
+<% end %>
+</ul>
+
+
+<a href="<%= edit_user_registration_path %>">Editer mail/mot de passe</a>
