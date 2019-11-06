@@ -1,9 +1,10 @@
 <p>ZBEUB ZBEUB</p>
 <%= form_for :users, :url => { :action => "create"} do %>
-  <%= text_field_tag(:e) %><br>
-  <%= text_field_tag(:e) %><br>
-  <%= text_field_tag(:e) %><br>
-  <%= text_field_tag(:e) %><br>
-  <%= text_field_tag(:e) %>
+ <span>titre</span>         <%= text_field_tag(:event_title) %><br>
+ <span>endroit</span>       <%= text_field_tag(:event_location) %><br>
+ <span>date de debut</span> <%= text_field_tag(:event_start_date) %><br>
+ <span>durée</span>         <%= text_field_tag(:event_duration) %><br>
+ <span>prix</span>          <%= text_field_tag(:event_price) %> <br>
+ <span>description</span>   <%= text_field_tag(:event_description) %>
   <%= submit_tag("s'inscrire") %>
 <% end %>
